@@ -1,0 +1,24 @@
+### Create new report
+POST http://localhost:3000/reports
+content-type: application/json
+
+{
+  "make": "zastava",
+  "model": "yugo55",
+  "year": 1996,
+  "lng": 2,
+  "lat": 3,
+  "milage": 10010,
+  "price": 320
+}
+
+### Approve existing report
+PATCH http://localhost:3000/reports/29
+content-type: application/json
+
+{
+  "approved": true
+}
+
+### Get an estimate from existing vehicle reports
+GET http://localhost:3000/reports?make=zastava&model=yugo55&lng=0&lat=0&milage=9000&year=1993
